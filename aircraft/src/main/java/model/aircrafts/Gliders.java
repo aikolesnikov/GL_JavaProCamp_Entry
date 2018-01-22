@@ -3,6 +3,6 @@ package model.aircrafts;
 /**
  * change doc
  */
-public abstract class Gliders extends Aircraft implements iUnpoweredCraft{
+public class Gliders extends UnpoweredAircraft{
 
 }

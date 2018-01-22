@@ -3,5 +3,5 @@ package model.aircrafts;
 /**
  * change doc
  */
-public abstract class Balloons extends Aircraft implements iUnpoweredCraft{
+public class Balloons extends UnpoweredAircraft{
 }

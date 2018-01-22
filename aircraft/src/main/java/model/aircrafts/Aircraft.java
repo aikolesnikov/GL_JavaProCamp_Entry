@@ -1,17 +1,18 @@
 package model.aircrafts;
 
+import java.util.List;
+
 /**
  * chane doc
  */
-abstract class Aircraft {
-    private int length;             // class Sizes? enum Scale?
+public abstract class Aircraft {
+    private int length;
     private int hight;
-    private int speed;              // ?
+    private int speed;
     private int carryingCapacity;
     private int totalCapacity;
     private int flightRange;
     private String modelName;
-
-    // private MethodOfLifT mOfLift;
-
+    private enum MethodOfLifT {LIGHTER_THAN_AIR, HEAVIER_THAN_AIR}
+    private List<Uses> usesList;
 }
