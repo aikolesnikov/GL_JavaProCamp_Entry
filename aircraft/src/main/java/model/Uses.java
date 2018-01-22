@@ -1,4 +1,4 @@
-package model.aircrafts;
+package model;
 
 /**
  * change doc

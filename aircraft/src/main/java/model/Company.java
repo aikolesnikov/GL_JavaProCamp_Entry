@@ -1,7 +1,5 @@
 package model;
 
-import model.aircrafts.Aircraft;
-
 import java.util.List;
 
 /**

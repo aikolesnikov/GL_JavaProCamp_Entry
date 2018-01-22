@@ -1,4 +1,4 @@
-package model.aircrafts;
+package model;
 
 abstract class UnpoweredAircraft extends Aircraft{
 }
