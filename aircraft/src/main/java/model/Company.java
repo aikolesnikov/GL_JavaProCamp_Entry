@@ -1,5 +1,6 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -12,13 +13,23 @@ public class Company {
 
     public Company(long id, String name) {
         this.id = id;
-        this.name = name;
+        if (name != null)
+            this.name = name;
+        else
+            this.name = Parameters.DEF_COMPANY_NAME;
+        this.aircraftList = new ArrayList<Aircraft>();
     }
 
     public Company(long id, String name, List<Aircraft> aircraftList) {
         this.id = id;
-        this.name = name;
-        this.aircraftList = aircraftList;
+        if (name != null)
+            this.name = name;
+        else
+            this.name = Parameters.DEF_COMPANY_NAME;
+        if (aircraftList!=null)
+            this.aircraftList = aircraftList;
+        else
+            this.aircraftList = new ArrayList<Aircraft>();
     }
 
     public long getId() {

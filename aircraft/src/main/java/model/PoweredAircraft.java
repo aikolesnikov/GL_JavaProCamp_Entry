@@ -1,5 +1,13 @@
 package model;
 
 abstract class PoweredAircraft extends Aircraft{
-    int fuelConsumption;
+    private int fuelConsumption;
+
+    public int getFuelConsumption() {
+        return fuelConsumption;
+    }
+
+    public void setFuelConsumption(int fuelConsumption) {
+        this.fuelConsumption = fuelConsumption;
+    }
 }
