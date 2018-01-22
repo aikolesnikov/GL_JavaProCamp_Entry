@@ -1,12 +1,14 @@
 package model;
 
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 /**
  * chane doc
  */
 
-public abstract class Aircraft {
+public abstract class Aircraft implements Comparable<Aircraft> {
     private int length;
     private int hight;
     private int speed;
@@ -15,6 +17,19 @@ public abstract class Aircraft {
     private int flightRange;
     private String modelName;
     private List<Uses> usesList;
+
+    Aircraft() {
+        this.modelName = Parameters.DEF_AIRCRAFT_NAME;
+        usesList = new ArrayList<Uses>();
+    }
+
+    public Aircraft(String modelName) {
+        if (modelName != null)
+            this.modelName = modelName;
+        else this.modelName = Parameters.DEF_AIRCRAFT_NAME;
+        usesList = new ArrayList<Uses>();
+    }
+
 
     public int getLength() {
         return length;
@@ -80,5 +95,16 @@ public abstract class Aircraft {
         this.usesList = usesList;
     }
 
+    public int compareTo(Aircraft a) {
+        if (this.getFlightRange() < a.getFlightRange())
+            return 1;
+        else if (this.getFlightRange() > a.getFlightRange())
+            return -1;
+        else
+            return 0;
+    }
 
+    public Iterator<Aircraft> iterator() {
+        return null;
+    }
 }

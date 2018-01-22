@@ -1,6 +1,7 @@
 package model;
 
-abstract class PoweredAircraft extends Aircraft{
+abstract class PoweredAircraft extends Aircraft {
+
     private int fuelConsumption;
 
     public int getFuelConsumption() {

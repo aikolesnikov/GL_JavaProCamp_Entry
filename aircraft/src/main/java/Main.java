@@ -4,19 +4,27 @@ import model.Rotocraft;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Logger;
 
 public class Main {
 
-    public static void main(String[] args) {
-        Company company1 = new Company(1, "firm1");
-        System.out.println(company1.toString());
+    public static void main(String[] args) throws Exception {
 
-        Rotocraft rt1 = new Rotocraft();
-        System.out.println(rt1.getFuelConsumption());
+        try {
+            Company company1 = new Company(1, "firm1");
+            System.out.println(company1.toString());
 
-        company1.getAircraftList().add(new Rotocraft());
+            Rotocraft rt1 = new Rotocraft();
+            System.out.println(rt1.getFuelConsumption());
 
-        System.out.println(company1.getAircraftList());
-        System.out.println(company1.getAircraftList().get(0).getUsesList());
+            company1.getAircraftList().add(new Rotocraft());
+
+            System.out.println(company1.getAircraftList());
+            System.out.println(company1.getAircraftList().get(0).getUsesList());
+
+        } catch (Exception e) {
+            Logger.getLogger("Main").severe(e.getStackTrace().toString());
+        }
+
     }
 }
