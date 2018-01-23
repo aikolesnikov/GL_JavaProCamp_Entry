@@ -5,7 +5,7 @@ package model;
  Create console application “Airline”:
  Define aircraft class hierarchy. There should be 3 levels of the hierarchy.
  Create an airline company that stores airplanes.
- TODO 3. Calculate total capacity and carrying capacity of all the aircraft in the airline.
+ Calculate total capacity and carrying capacity of all the aircraft in the airline.
  TODO 4. Sort the aircraft by flight range (from smaller to larger) and display it on screen.
  TODO 5. Find aircraft corresponding to the specified range of fuel consumption parameters (liters per hour).
  TODO 6. Console menu should be minimal:

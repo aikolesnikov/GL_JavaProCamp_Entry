@@ -1,4 +1,6 @@
 import model.*;
+import process.Statistics;
+import process.Utils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,13 +13,29 @@ public class Main {
     }
 
     private static List<Aircraft> InitAircraftsList() {
-        List<Aircraft> aList = new ArrayList<Aircraft>();
-        aList.add(new Balloon());
-        aList.add(new Glider());
-        aList.add(new JetAircraft());
-        aList.add(new Kite());
-        aList.add(new Propeller());
-        aList.add(new Rotocraft());
+        List<Aircraft> aList = new ArrayList<>();
+
+
+        Balloon b = new Balloon("BallonModel1", 1, 2, 3,
+                4, 5, 6, null);
+        Glider g = new Glider("GliderModel1", 3,
+                4, 5, 6, 7, 8,null);
+        JetAircraft j = new JetAircraft("JetModel1",
+                4, 5, 6, 7, 8,9, null, 10);
+        Kite k = new Kite("KiteModel1", 5, 6, 7,
+                8,9, 10, null);
+        Propeller p = new Propeller("PropellerModel1",
+                6, 7, 8,9, 10, 11, null, 12);
+        Rotocraft r = new Rotocraft("RotocraftModel1",
+                7, 8,9, 10, 11, 12, null, 13);
+
+        aList.add(b);
+        aList.add(g);
+        aList.add(j);
+        aList.add(k);
+        aList.add(p);
+        aList.add(r);
+
         return aList;
     }
 
@@ -30,6 +48,10 @@ public class Main {
             log.info(company.toString() + " has been created.");
             company.setAircraftList(InitAircraftsList());
             log.info("Company's aircraft list is set as: " + company.getAircraftList());
+
+            System.out.println(Statistics.totalCapacity(company));
+
+            // Utils.sortAircraftList(company.getAircraftList());
 
         } catch (Exception e) {
             log.severe(e.getStackTrace().toString());

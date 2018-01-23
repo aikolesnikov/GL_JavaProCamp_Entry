@@ -17,7 +17,7 @@ public class Company {
             this.name = name;
         else
             this.name = Parameters.getDefCompanyName();
-        this.aircraftList = new ArrayList<Aircraft>();
+        this.aircraftList = new ArrayList<>();
     }
 
     public Company(long id, String name, List<Aircraft> aircraftList) {
@@ -29,7 +29,7 @@ public class Company {
         if (aircraftList!=null)
             this.aircraftList = aircraftList;
         else
-            this.aircraftList = new ArrayList<Aircraft>();
+            this.aircraftList = new ArrayList<>();
     }
 
     public long getId() {
@@ -45,7 +45,10 @@ public class Company {
     }
 
     public void setName(String name) {
-        this.name = name;
+        if (name != null)
+            this.name = name;
+        else
+            this.name = Parameters.getDefCompanyName();
     }
 
     public List<Aircraft> getAircraftList() {
@@ -53,7 +56,10 @@ public class Company {
     }
 
     public void setAircraftList(List<Aircraft> aircraftList) {
-        this.aircraftList = aircraftList;
+        if (aircraftList!=null)
+            this.aircraftList = aircraftList;
+        else
+            this.aircraftList = new ArrayList<>();
     }
 
 

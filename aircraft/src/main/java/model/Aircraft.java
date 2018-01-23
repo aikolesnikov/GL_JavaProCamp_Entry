@@ -1,35 +1,58 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 
 /**
- * chane doc
+ * change doc
  */
 
-public abstract class Aircraft implements Comparable<Aircraft> {
+// implements Comparable<Aircraft>
+public abstract class Aircraft  {
+    private String modelName;
     private int length;
     private int hight;
     private int speed;
     private int carryingCapacity;
     private int totalCapacity;
     private int flightRange;
-    private String modelName;
     private List<Uses> usesList;
 
     Aircraft() {
         this.modelName = Parameters.getDefAircraftName();
-        usesList = new ArrayList<Uses>();
+        usesList = new ArrayList<>();
     }
 
     public Aircraft(String modelName) {
         if (modelName != null)
             this.modelName = modelName;
         else this.modelName = Parameters.getDefAircraftName();
-        usesList = new ArrayList<Uses>();
+        usesList = new ArrayList<>();
     }
 
+    public Aircraft(String modelName, int length, int hight, int speed,
+                    int carryingCapacity, int totalCapacity,
+                    int flightRange, List<Uses> usesList) {
+        this.modelName = modelName;
+        this.length = length;
+        this.hight = hight;
+        this.speed = speed;
+        this.carryingCapacity = carryingCapacity;
+        this.totalCapacity = totalCapacity;
+        this.flightRange = flightRange;
+        this.usesList = usesList;
+    }
+
+
+    public String getModelName() {
+        return modelName;
+    }
+
+    public void setModelName(String modelName) {
+        this.modelName = modelName;
+    }
 
     public int getLength() {
         return length;
@@ -79,14 +102,6 @@ public abstract class Aircraft implements Comparable<Aircraft> {
         this.flightRange = flightRange;
     }
 
-    public String getModelName() {
-        return modelName;
-    }
-
-    public void setModelName(String modelName) {
-        this.modelName = modelName;
-    }
-
     public List<Uses> getUsesList() {
         return usesList;
     }
@@ -95,16 +110,21 @@ public abstract class Aircraft implements Comparable<Aircraft> {
         this.usesList = usesList;
     }
 
-    public int compareTo(Aircraft a) {
-        if (this.getFlightRange() < a.getFlightRange())
-            return 1;
-        else if (this.getFlightRange() > a.getFlightRange())
-            return -1;
-        else
-            return 0;
-    }
 
-    public Iterator<Aircraft> iterator() {
-        return null;
-    }
+//    public int compareTo(Aircraft a) {
+//        if (this.getFlightRange() < a.getFlightRange())
+//            return 1;
+//        else if (this.getFlightRange() > a.getFlightRange())
+//            return -1;
+//        else
+//            return 0;
+//    }
+//
+//    public int compare(Aircraft o1, Aircraft o2) {
+//        return 0;
+//    }
+
+//    public Iterator<Aircraft> iterator() {
+//        return null;
+//    }
 }
