@@ -16,7 +16,7 @@ public class Company {
         if (name != null)
             this.name = name;
         else
-            this.name = Parameters.DEF_COMPANY_NAME;
+            this.name = Parameters.getDefCompanyName();
         this.aircraftList = new ArrayList<Aircraft>();
     }
 
@@ -25,7 +25,7 @@ public class Company {
         if (name != null)
             this.name = name;
         else
-            this.name = Parameters.DEF_COMPANY_NAME;
+            this.name = Parameters.getDefCompanyName();
         if (aircraftList!=null)
             this.aircraftList = aircraftList;
         else

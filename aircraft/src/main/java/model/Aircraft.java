@@ -19,14 +19,14 @@ public abstract class Aircraft implements Comparable<Aircraft> {
     private List<Uses> usesList;
 
     Aircraft() {
-        this.modelName = Parameters.DEF_AIRCRAFT_NAME;
+        this.modelName = Parameters.getDefAircraftName();
         usesList = new ArrayList<Uses>();
     }
 
     public Aircraft(String modelName) {
         if (modelName != null)
             this.modelName = modelName;
-        else this.modelName = Parameters.DEF_AIRCRAFT_NAME;
+        else this.modelName = Parameters.getDefAircraftName();
         usesList = new ArrayList<Uses>();
     }
 

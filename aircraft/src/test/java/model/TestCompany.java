@@ -4,20 +4,34 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Logger;
+
 public class TestCompany {
+    private static Company company = new Company(1, Parameters.getDefCompanyName());
+    private Logger log = Logger.getLogger(this.getClass().getName());
+
     @Before
-    public void setup(){
-        System.out.println("Test class setup");
+    public void setup() {
+        log.info("Before method started");
     }
 
     @Test
-    public void testCompany(){
-        Company company1 = new Company(1, "firm1");
-        // System.out.println(company1.toString());
+    public void testCompany() {
+        log.info("Check of company setName");
+        company.setName("firm1");
+        Assert.assertEquals(company.getName(),"firm1");
+        Assert.assertEquals(company.toString(), "Company{id=1, name='firm1', aircraftList=[]}");
 
-        Assert.assertEquals(company1.toString(),"Company{id=1, name='firm1', aircraftList=null}");
-
+        log.info("Check of aircraft list's setting.");
+        company.getAircraftList().add(new Balloon());
+        company.getAircraftList().add(new Glider());
+        company.getAircraftList().add(new JetAircraft());
+        company.getAircraftList().add(new Kite());
+        company.getAircraftList().add(new Propeller());
+        company.getAircraftList().add(new Rotocraft());
+        Assert.assertTrue(company.getAircraftList().size()==6);
     }
-
 
 }
