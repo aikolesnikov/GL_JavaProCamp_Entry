@@ -1,6 +1,7 @@
 import model.*;
 import process.Statistics;
 import process.Utils;
+import view.Menu;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -49,8 +50,12 @@ public class Main {
             log.info(company.toString() + " has been created.");
             company.setAircraftList(InitAircraftsList());
             log.info("Company's aircraft list is set as: " + company.getAircraftList());
+            System.out.println();
 
-            System.out.println(Statistics.totalCapacity(company));
+            Menu.initMenu();
+
+
+            /*            System.out.println(Statistics.totalCapacity(company));
 
             Comparator<Aircraft> aircraftComparator = Comparator.comparing(Aircraft::getFlightRange);
             System.out.println(Utils.sortAircraftList(company.getAircraftList(), aircraftComparator));
@@ -59,6 +64,7 @@ public class Main {
             System.out.println();
 
             System.out.println(Utils.findAircraftByFuelConsumtion(company, 9,14));
+*/
 
         } catch (Exception e) {
             log.severe(e.getCause().toString());
