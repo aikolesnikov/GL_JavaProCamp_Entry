@@ -2,7 +2,7 @@ package model;
 
 import java.util.List;
 
-abstract class PoweredAircraft extends Aircraft {
+public class PoweredAircraft extends Aircraft {
 
     private int fuelConsumption;
 

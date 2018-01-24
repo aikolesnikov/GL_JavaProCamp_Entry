@@ -6,8 +6,8 @@ package model;
  Define aircraft class hierarchy. There should be 3 levels of the hierarchy.
  Create an airline company that stores airplanes.
  Calculate total capacity and carrying capacity of all the aircraft in the airline.
- TODO 4. Sort the aircraft by flight range (from smaller to larger) and display it on screen.
- TODO 5. Find aircraft corresponding to the specified range of fuel consumption parameters (liters per hour).
+ Sort the aircraft by flight range (from smaller to larger) and display it on screen.
+ Find aircraft corresponding to the specified range of fuel consumption parameters (liters per hour).
  TODO 6. Console menu should be minimal:
  • Calculate the total capacity and carrying capacity of all the aircraft in the airline.
  • Display the list of aircraft of the company sorted by flight range.

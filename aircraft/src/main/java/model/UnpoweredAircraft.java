@@ -2,7 +2,7 @@ package model;
 
 import java.util.List;
 
-abstract class UnpoweredAircraft extends Aircraft {
+public class UnpoweredAircraft extends Aircraft {
 
     public UnpoweredAircraft(){}
 

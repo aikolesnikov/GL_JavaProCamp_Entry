@@ -110,21 +110,4 @@ public abstract class Aircraft  {
         this.usesList = usesList;
     }
 
-
-//    public int compareTo(Aircraft a) {
-//        if (this.getFlightRange() < a.getFlightRange())
-//            return 1;
-//        else if (this.getFlightRange() > a.getFlightRange())
-//            return -1;
-//        else
-//            return 0;
-//    }
-//
-//    public int compare(Aircraft o1, Aircraft o2) {
-//        return 0;
-//    }
-
-//    public Iterator<Aircraft> iterator() {
-//        return null;
-//    }
 }
