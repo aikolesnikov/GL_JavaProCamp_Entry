@@ -16,7 +16,7 @@ public class Statistics {
     public static long carryingCapacity(Company company) {
         long cCapacity = 0;
         for (Aircraft a : company.getAircraftList()) {
-            cCapacity += a.getTotalCapacity();
+            cCapacity += a.getCarryingCapacity();
         }
         return cCapacity;
     }

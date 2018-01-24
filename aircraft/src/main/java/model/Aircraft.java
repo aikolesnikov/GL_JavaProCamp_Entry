@@ -110,4 +110,9 @@ public abstract class Aircraft  {
         this.usesList = usesList;
     }
 
+    @Override
+    public String toString(){
+        return modelName;
+    }
+
 }
