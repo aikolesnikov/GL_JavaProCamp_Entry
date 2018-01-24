@@ -1,3 +1,5 @@
+package process;
+
 import model.*;
 import process.MainProcessing;
 
@@ -40,7 +42,7 @@ public class Main {
 
 
     public static void main(String[] args) throws Exception {
-        Logger log = Logger.getLogger("Main");
+        Logger log = Logger.getLogger("process.Main");
 
         try {
             Company company = InitCompany();
