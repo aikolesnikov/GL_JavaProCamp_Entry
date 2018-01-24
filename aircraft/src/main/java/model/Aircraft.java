@@ -6,7 +6,8 @@ import java.util.Iterator;
 import java.util.List;
 
 /**
- * change doc
+ * Main abstract class describing subject and
+ * based on https://en.wikipedia.org/wiki/Aircraft
  */
 
 // implements Comparable<Aircraft>
