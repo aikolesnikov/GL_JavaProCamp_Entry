@@ -1,34 +1,38 @@
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.sql.*;
+import java.util.Properties;
 
 public class TryDB {
 
-    // private final static String URL = "jdbc:mysql://localhost:3306/mydbtest";
-    private final static String URL =
-            "jdbc:mysql://localhost:3306/aircraft?useUnicode=true&useSSL=true&useJDBCCompliantTimezoneShift=true" +
-                    "&useLegacyDatetimeCode=false&serverTimezone=UTC";
-    private final static String USERNAME = "kaim";
-    private final static String PASSWORD = "kaimka";
+    private final static String rootPath = Thread.currentThread().getContextClassLoader().getResource("").getPath();
+    private final static String appConfigPath = rootPath + ".." + File.separator + ".." + File.separator + "app.properties";
+    private final static Properties appProps = new Properties();
+
 
     public static void main(String[] args) throws SQLException {
 
-        Connection connection;
-        connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+        try {
+            appProps.load(new FileInputStream(appConfigPath));
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.exit(1);
+        }
 
+        String db = appProps.getProperty("DB_URL");
+        String db_login = appProps.getProperty("DB_Login");
+        String db_password = appProps.getProperty("DB_Password");
 
-        String sql = "select * from tbl_aEngines";
+        try (Connection connection = DriverManager.getConnection(db, db_login, db_password); Statement stmt = connection.createStatement()) {
+            ResultSet rs = stmt.executeQuery("select * from tbl_aEngines");
 
-        try (Statement stmt = connection.createStatement()) {
-            ResultSet rs = stmt.executeQuery(sql);
-
-            System.out.println(rs.getMetaData().getColumnCount());
-
-            System.out.println();
             while (rs.next()) {
                 System.out.println(
                         rs.getInt("id") + ",  " +
                                 rs.getString("name") + ", " +
                                 rs.getString("serialNum") + ", " +
-                                rs.getString("model_id") + ", "
+                                rs.getInt("model_id") + ", "
                 );
             }
 
@@ -46,16 +50,3 @@ public class TryDB {
         }
     }
 }
-
-/*
-
-        if (!connection.isClosed()) {
-            System.out.println("Соединение с БД Установлено!");
-        }
-
-        connection.close();
-        if (connection.isClosed()) {
-            System.out.println("Соединение с БД Закрыто!");
-        }
-
- */
