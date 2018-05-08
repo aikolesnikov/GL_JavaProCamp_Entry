@@ -56,6 +56,7 @@ public class Main {
             System.out.println(Utils.findAircraftByFuelConsumtion(company, 9,14));
 */
 
+
         } catch (Exception e) {
             log.severe(e.getCause().toString());
         }
