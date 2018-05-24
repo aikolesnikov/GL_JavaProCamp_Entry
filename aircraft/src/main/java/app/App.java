@@ -1,3 +1,7 @@
+package app;
+
+import DB.DB_Worker;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -7,7 +11,7 @@ import java.util.Properties;
 
 public class App {
 
-    private final static Properties appProps = new Properties();
+    public final static Properties appProps = new Properties();
     private final static String rootPath = Thread.currentThread().getContextClassLoader().getResource("").getPath();
     private final static String appConfigPath = rootPath + ".." + File.separator + ".." + File.separator + "app.properties";
 
@@ -21,9 +25,7 @@ public class App {
         }
     }
 
-    final static String db = appProps.getProperty("DB_URL");
-    final static String db_login = appProps.getProperty("DB_Login");
-    final static String db_password = appProps.getProperty("DB_Password");
+
 
     public static void main(String[] args) throws SQLException {
 
@@ -52,5 +54,11 @@ public class App {
             e.printStackTrace();
         }
 
+
+        System.out.println();
+        System.out.println(rs.getMetaData().getColumnCount());
+        System.out.println(rs.getMetaData());
+
     }
+
 }
