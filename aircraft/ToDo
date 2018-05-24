@@ -1,0 +1,10 @@
+ToDo - Develop application with Spring Core and REST WS.
+ToDo - Use any DB.
+ToDo - Unit test coverage more then 65%.
+
+ToDo - Make RESTful web services for:
+ToDo - Add, edit, delete a aircraft
+ToDo - Get calculated total passenger capacity and cargo capacity of all the aircrafts in the airline.
+ToDo - Get sorted list of all aircrafts in the airline. Sort the aircrafts by flight range (from smaller to larger)
+ToDo - Find aircraft corresponding to the specified range of fuel consumption parameters (liters per hour).
+ToDo - Find aircraft which corresponding to the specified passenger capacity and the flight range
